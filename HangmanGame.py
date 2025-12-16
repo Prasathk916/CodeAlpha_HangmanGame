@@ -1,6 +1,8 @@
 import random
+
 words = ["python", "coding", "program", "developer", "hangman"]
 secret_word = random.choice(words)
+
 guessed_letters = []
 attempts = 6
 display_word = ["_"] * len(secret_word)
@@ -8,6 +10,7 @@ display_word = ["_"] * len(secret_word)
 print("🎯 Welcome to Hangman Game!")
 print("Guess the word letter by letter.")
 print(" ".join(display_word))
+
 while attempts > 0 and "_" in display_word:
     guess = input("\nEnter a letter: ").lower()
 
@@ -20,6 +23,7 @@ while attempts > 0 and "_" in display_word:
         continue
 
     guessed_letters.append(guess)
+
     if guess in secret_word:
         print("✅ Correct guess!")
         for i in range(len(secret_word)):
